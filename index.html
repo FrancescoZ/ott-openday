@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Day Over the Top - 25 Aprile 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Preload hero image for faster loading -->
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1558788353-f76d92427f16?w=1600&q=80">
+    <style>
+        :root {
+            /* Palette naturale e calda */
+            --forest: #2D5A4A;
+            --forest-dark: #1E3D32;
+            --sage: #7BA38F;
+            --sage-light: #A8C5B5;
+            --cream: #FDF8F3;
+            --warm-white: #FFFCF7;
+            --terracotta: #D4896A;
+            --terracotta-dark: #C27555;
+            --sand: #E8DED3;
+            --text-dark: #2C3E36;
+            --text-muted: #6B7B74;
+            
+            /* Shadows */
+            --shadow-sm: 0 2px 8px rgba(45, 90, 74, 0.08);
+            --shadow-md: 0 8px 24px rgba(45, 90, 74, 0.12);
+            --shadow-lg: 0 16px 48px rgba(45, 90, 74, 0.16);
+            --shadow-xl: 0 24px 64px rgba(45, 90, 74, 0.20);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 700;
+        }
+        
+        /* ==================== HERO SECTION ==================== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: 
+                linear-gradient(135deg, rgba(45, 90, 74, 0.88) 0%, rgba(30, 61, 50, 0.92) 50%, rgba(26, 47, 40, 0.95) 100%),
+                url('https://images.unsplash.com/photo-1558788353-f76d92427f16?w=1600&q=80') center/cover no-repeat;
+            overflow: hidden;
+        }
+        
+        /* Decorative background elements */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 60%;
+            height: 80%;
+            background: radial-gradient(ellipse, rgba(123, 163, 143, 0.15) 0%, transparent 70%);
+            animation: float 12s ease-in-out infinite;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -10%;
+            left: -5%;
+            width: 40%;
+            height: 60%;
+            background: radial-gradient(ellipse, rgba(212, 137, 106, 0.12) 0%, transparent 70%);
+            animation: float 10s ease-in-out infinite reverse;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(20px, -30px) scale(1.05); }
+        }
+        
+        /* Paw prints decoration */
+        .paw-prints {
+            position: absolute;
+            inset: 0;
+            opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='50' text-anchor='middle' font-size='30'%3E🐾%3C/text%3E%3C/svg%3E");
+            background-size: 80px 80px;
+            animation: movePaws 30s linear infinite;
+        }
+        
+        @keyframes movePaws {
+            0% { background-position: 0 0; }
+            100% { background-position: 80px 80px; }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 40px 24px;
+            max-width: 900px;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--sage-light);
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 32px;
+            animation: fadeInDown 0.8s ease;
+        }
+        
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            color: white;
+            margin-bottom: 8px;
+            line-height: 1.1;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+        
+        .hero h1 span {
+            display: block;
+            background: linear-gradient(135deg, var(--terracotta) 0%, var(--sage-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .hero-date {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: white;
+            margin: 24px 0 16px;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+        
+        .hero-date .date-icon {
+            font-size: 2rem;
+        }
+        
+        .hero-location {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 1.1rem;
+            color: var(--sage-light);
+            margin-bottom: 40px;
+            animation: fadeInUp 0.8s ease 0.5s both;
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--terracotta) 0%, var(--terracotta-dark) 100%);
+            color: white;
+            padding: 18px 42px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            text-decoration: none;
+            border-radius: 60px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 8px 30px rgba(212, 137, 106, 0.4);
+            animation: fadeInUp 0.8s ease 0.6s both;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 16px 40px rgba(212, 137, 106, 0.5);
+        }
+        
+        .cta-button svg {
+            transition: transform 0.3s ease;
+        }
+        
+        .cta-button:hover svg {
+            transform: translateX(4px);
+        }
+        
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-12px); }
+            60% { transform: translateX(-50%) translateY(-6px); }
+        }
+        
+        .scroll-indicator svg {
+            width: 32px;
+            height: 32px;
+            color: var(--sage-light);
+            opacity: 0.6;
+        }
+        
+        /* ==================== SECTIONS COMMON ==================== */
+        section {
+            padding: 100px 24px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--sage-light);
+            color: var(--forest-dark);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .section-header h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--forest);
+            margin-bottom: 16px;
+        }
+        
+        .section-header p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* ==================== LEZIONI SECTION ==================== */
+        .lezioni {
+            background: var(--warm-white);
+        }
+        
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 28px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 24px;
+            padding: 36px;
+            padding-top: 140px;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(45, 90, 74, 0.06);
+            overflow: hidden;
+        }
+        
+        .card-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 120px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 24px 24px 0 0;
+        }
+        
+        .card-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 40px;
+            background: linear-gradient(to top, white 0%, transparent 100%);
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--forest) 0%, var(--sage) 100%);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .card-icon {
+            width: 72px;
+            height: 72px;
+            background: linear-gradient(135deg, var(--sage-light) 0%, var(--sage) 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 24px;
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover .card-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .card h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--forest);
+            margin-bottom: 12px;
+        }
+        
+        .card p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+        
+        .card-duration {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--cream);
+            color: var(--forest);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        /* ==================== TALK SECTION ==================== */
+        .talk {
+            background: 
+                linear-gradient(180deg, rgba(45, 90, 74, 0.95) 0%, rgba(30, 61, 50, 0.97) 100%),
+                url('https://images.unsplash.com/photo-1601758123927-4f7acc7da589?w=1400&q=80') center/cover no-repeat fixed;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .talk::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 120px;
+            background: linear-gradient(180deg, var(--warm-white) 0%, transparent 100%);
+            clip-path: ellipse(70% 100% at 50% 0%);
+        }
+        
+        .talk .section-header h2 {
+            color: white;
+        }
+        
+        .talk .section-header p {
+            color: var(--sage-light);
+        }
+        
+        .talk .section-tag {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            backdrop-filter: blur(10px);
+        }
+        
+        .talk-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        
+        .talk-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            padding: 32px;
+            transition: all 0.4s ease;
+        }
+        
+        .talk-card:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-6px);
+            border-color: var(--terracotta);
+        }
+        
+        .talk-card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .talk-card h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 10px;
+        }
+        
+        .talk-card p {
+            color: var(--sage-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .talk-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(212, 137, 106, 0.2);
+            color: var(--terracotta);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 16px;
+        }
+        
+        /* ==================== PREZZI SECTION ==================== */
+        .prezzi {
+            background: var(--sand);
+            position: relative;
+        }
+        
+        .prezzi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 32px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .prezzo-card {
+            background: white;
+            border-radius: 28px;
+            padding: 48px 40px;
+            text-align: center;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .prezzo-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .prezzo-card.featured {
+            background: linear-gradient(145deg, var(--forest) 0%, var(--forest-dark) 100%);
+            color: white;
+            transform: scale(1.03);
+        }
+        
+        .prezzo-card.featured:hover {
+            transform: scale(1.03) translateY(-10px);
+        }
+        
+        .prezzo-card.featured .popular-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--terracotta) 0%, var(--terracotta-dark) 100%);
+            color: white;
+            padding: 10px 28px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 20px rgba(212, 137, 106, 0.4);
+        }
+        
+        .prezzo-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .prezzo-tipo {
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            opacity: 0.7;
+        }
+        
+        .prezzo-valore {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+        
+        .prezzo-card:not(.featured) .prezzo-valore {
+            color: var(--forest);
+        }
+        
+        .prezzo-desc {
+            font-size: 1rem;
+            opacity: 0.8;
+            margin-bottom: 28px;
+        }
+        
+        .prezzo-divider {
+            width: 60px;
+            height: 2px;
+            background: currentColor;
+            opacity: 0.2;
+            margin: 0 auto 28px;
+            border-radius: 2px;
+        }
+        
+        .prezzo-features {
+            text-align: left;
+            list-style: none;
+        }
+        
+        .prezzo-features li {
+            padding: 12px 0;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 1rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        }
+        
+        .prezzo-card.featured .prezzo-features li {
+            border-bottom-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .prezzo-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .prezzo-features li .check {
+            width: 24px;
+            height: 24px;
+            background: var(--sage-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .prezzo-card.featured .prezzo-features li .check {
+            background: var(--terracotta);
+        }
+        
+        .prezzo-features li .check svg {
+            width: 14px;
+            height: 14px;
+            color: var(--forest-dark);
+        }
+        
+        .prezzo-card.featured .prezzo-features li .check svg {
+            color: white;
+        }
+        
+        /* ==================== ISCRIZIONE SECTION ==================== */
+        .iscrizione {
+            background: var(--warm-white);
+            text-align: center;
+        }
+        
+        .iscrizione-box {
+            background: 
+                linear-gradient(145deg, rgba(212, 137, 106, 0.92) 0%, rgba(194, 117, 85, 0.95) 100%),
+                url('https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=1000&q=80') center/cover no-repeat;
+            border-radius: 32px;
+            padding: 64px 40px;
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(212, 137, 106, 0.3);
+        }
+        
+        .iscrizione-box::before {
+            content: '🐾';
+            position: absolute;
+            font-size: 150px;
+            opacity: 0.08;
+            top: -20px;
+            right: -30px;
+            transform: rotate(15deg);
+        }
+        
+        .iscrizione-box h3 {
+            font-size: 2.2rem;
+            color: white;
+            margin-bottom: 16px;
+        }
+        
+        .iscrizione-box p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 36px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .telefono {
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            background: white;
+            color: var(--forest-dark);
+            padding: 20px 36px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .telefono:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .telefono .phone-icon {
+            width: 28px;
+            height: 28px;
+            background: var(--forest);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .telefono .phone-icon svg {
+            width: 16px;
+            height: 16px;
+            color: white;
+        }
+        
+        /* ==================== MAPPA SECTION ==================== */
+        .mappa {
+            background: var(--forest-dark);
+            color: white;
+        }
+        
+        .mappa .section-header h2 {
+            color: white;
+        }
+        
+        .mappa .section-header p {
+            color: var(--sage-light);
+        }
+        
+        .mappa .section-tag {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        
+        .mappa-content {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 48px;
+            align-items: center;
+        }
+        
+        .mappa-info {
+            padding: 20px 0;
+        }
+        
+        .mappa-info h3 {
+            font-size: 1.8rem;
+            color: white;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .location-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            padding: 28px;
+        }
+        
+        .location-card .address {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        
+        .location-card .address-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--terracotta);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .location-card .address-icon svg {
+            width: 24px;
+            height: 24px;
+            color: white;
+        }
+        
+        .location-card .address-text strong {
+            display: block;
+            font-size: 1.2rem;
+            margin-bottom: 4px;
+        }
+        
+        .location-card .address-text span {
+            color: var(--sage-light);
+        }
+        
+        .location-features {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        
+        .location-feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.06);
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            color: var(--sage-light);
+        }
+        
+        .mappa-embed {
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            border: 3px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .mappa-embed iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            display: block;
+        }
+        
+        /* ==================== FOOTER ==================== */
+        footer {
+            background: 
+                linear-gradient(to right, rgba(30, 61, 50, 0.97) 0%, rgba(30, 61, 50, 0.92) 50%, rgba(30, 61, 50, 0.97) 100%),
+                url('https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=1200&q=80') center/cover no-repeat;
+            color: var(--sage-light);
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        footer .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 16px;
+        }
+        
+        footer p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+        
+        footer .made-with {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        
+        footer .made-with span {
+            color: var(--terracotta);
+        }
+        
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 900px) {
+            .mappa-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .mappa-embed {
+                order: -1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            section {
+                padding: 70px 20px;
+            }
+            
+            .cards-grid,
+            .prezzi-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .prezzo-card.featured {
+                transform: none;
+            }
+            
+            .prezzo-card.featured:hover {
+                transform: translateY(-10px);
+            }
+            
+            .hero-content {
+                padding: 30px 20px;
+            }
+            
+            .scroll-indicator {
+                bottom: 24px;
+            }
+            
+            .iscrizione-box {
+                padding: 48px 28px;
+            }
+            
+            .telefono {
+                padding: 16px 28px;
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-badge {
+                padding: 8px 18px;
+                font-size: 0.8rem;
+            }
+            
+            .cta-button {
+                padding: 16px 32px;
+                font-size: 1rem;
+            }
+            
+            .card {
+                padding: 28px;
+            }
+            
+            .talk-card {
+                padding: 24px;
+            }
+            
+            .location-features {
+                flex-direction: column;
+            }
+        }
+        
+        /* ==================== ANIMATIONS ==================== */
+        @keyframes fadeInUpStagger {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .card, .talk-card, .prezzo-card {
+            animation: fadeInUpStagger 0.6s ease both;
+        }
+        
+        .card:nth-child(1), .talk-card:nth-child(1), .prezzo-card:nth-child(1) { animation-delay: 0.1s; }
+        .card:nth-child(2), .talk-card:nth-child(2), .prezzo-card:nth-child(2) { animation-delay: 0.2s; }
+        .card:nth-child(3), .talk-card:nth-child(3) { animation-delay: 0.3s; }
+        .card:nth-child(4), .talk-card:nth-child(4) { animation-delay: 0.4s; }
+        .card:nth-child(5) { animation-delay: 0.5s; }
+        .card:nth-child(6) { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="paw-prints"></div>
+        <div class="hero-content">
+            <span class="hero-badge">
+                🐕 Evento Cinofilo Gratuito
+            </span>
+            <h1>
+                Open Day
+                <span>Over the Top</span>
+            </h1>
+            <div class="hero-date">
+                <span class="date-icon">📅</span>
+                25 Aprile 2026
+            </div>
+            <p class="hero-location">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                Via per Ornago 2, Mezzate
+            </p>
+            <a href="#iscrizione" class="cta-button">
+                Iscriviti Ora
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+        <div class="scroll-indicator">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 5v14M19 12l-7 7-7-7"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Lezioni Section -->
+    <section class="lezioni" id="lezioni">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">🎓 Lezioni</span>
+                <h2>Prova le Nostre Discipline</h2>
+                <p>Sessioni gratuite di ~20 minuti con istruttori qualificati. Scopri quale attività fa per te e il tuo cane!</p>
+            </div>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=600&q=80');"></div>
+                    <div class="card-icon">🏃</div>
+                    <h3>Agility</h3>
+                    <p>Percorsi ad ostacoli per cani veloci e atletici. Divertimento e sport in un'unica attività!</p>
+                    <span class="card-duration">⏱️ ~20 min</span>
+                </div>
+                <div class="card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600&q=80');"></div>
+                    <div class="card-icon">🎯</div>
+                    <h3>Rally Obedience</h3>
+                    <p>Percorso con esercizi di obbedienza e complicità. Rafforza il legame con il tuo cane.</p>
+                    <span class="card-duration">⏱️ ~20 min</span>
+                </div>
+                <div class="card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1503256207526-0d5d80fa2f47?w=600&q=80');"></div>
+                    <div class="card-icon">🐑</div>
+                    <h3>Sheep Dog</h3>
+                    <p>L'arte della conduzione del gregge. Un'esperienza unica per i cani da pastore.</p>
+                    <span class="card-duration">⏱️ ~20 min</span>
+                </div>
+                <div class="card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1534361960057-19889db9621e?w=600&q=80');"></div>
+                    <div class="card-icon">👃</div>
+                    <h3>Nose Work</h3>
+                    <p>Ricerca olfattiva per stimolare la mente. Il naso del cane è incredibile!</p>
+                    <span class="card-duration">⏱️ ~20 min</span>
+                </div>
+                <div class="card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1477884213360-7e9d7dcc1e48?w=600&q=80');"></div>
+                    <div class="card-icon">🔍</div>
+                    <h3>Mantrailing</h3>
+                    <p>Ricerca di persone seguendo tracce olfattive. Attiva l'istinto naturale del tuo cane.</p>
+                    <span class="card-duration">⏱️ ~20 min</span>
+                </div>
+                <div class="card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1587559045816-8b0a54d1d5a1?w=600&q=80');"></div>
+                    <div class="card-icon">📚</div>
+                    <h3>Educazione</h3>
+                    <p>Basi per una convivenza serena e felice. Fondamentale per ogni proprietario.</p>
+                    <span class="card-duration">⏱️ ~20 min</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Talk Section -->
+    <section class="talk" id="talk">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">🎤 Seminari</span>
+                <h2>Talk con Esperti</h2>
+                <p>Seminari gratuiti tenuti da professionisti del settore. Impara dai migliori!</p>
+            </div>
+            <div class="talk-grid">
+                <div class="talk-card">
+                    <span class="talk-card-icon">🥗</span>
+                    <h3>Nutrizione Canina</h3>
+                    <p>Alimentazione corretta per il benessere e la longevità del tuo amico a quattro zampe.</p>
+                    <span class="talk-badge">✨ Gratuito</span>
+                </div>
+                <div class="talk-card">
+                    <span class="talk-card-icon">🩺</span>
+                    <h3>Pronto Soccorso</h3>
+                    <p>Come riconoscere un'emergenza e intervenire nei primi minuti critici.</p>
+                    <span class="talk-badge">✨ Gratuito</span>
+                </div>
+                <div class="talk-card">
+                    <span class="talk-card-icon">🐕‍🦺</span>
+                    <h3>Cani Anziani</h3>
+                    <p>Cure, attenzioni e accorgimenti per i nostri amici senior. Invecchiare bene insieme.</p>
+                    <span class="talk-badge">✨ Gratuito</span>
+                </div>
+                <div class="talk-card">
+                    <span class="talk-card-icon">👃</span>
+                    <h3>Mondo Olfattivo</h3>
+                    <p>Approfondimento sulla ricerca olfattiva e come i cani percepiscono il mondo.</p>
+                    <span class="talk-badge">✨ Gratuito</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prezzi Section -->
+    <section class="prezzi" id="prezzi">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">💳 Prezzi</span>
+                <h2>Quanto Costa?</h2>
+                <p>Partecipare è semplice e accessibile a tutti</p>
+            </div>
+            <div class="prezzi-grid">
+                <div class="prezzo-card">
+                    <div class="prezzo-icon">🎤</div>
+                    <div class="prezzo-tipo">Solo Talk</div>
+                    <div class="prezzo-valore">Gratis</div>
+                    <p class="prezzo-desc">Accesso libero ai seminari</p>
+                    <div class="prezzo-divider"></div>
+                    <ul class="prezzo-features">
+                        <li>
+                            <span class="check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M20 6L9 17l-5-5"/>
+                                </svg>
+                            </span>
+                            Tutti i talk con esperti
+                        </li>
+                        <li>
+                            <span class="check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M20 6L9 17l-5-5"/>
+                                </svg>
+                            </span>
+                            Materiale informativo
+                        </li>
+                        <li>
+                            <span class="check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M20 6L9 17l-5-5"/>
+                                </svg>
+                            </span>
+                            Q&A con i relatori
+                        </li>
+                    </ul>
+                </div>
+                <div class="prezzo-card featured">
+                    <span class="popular-badge">⭐ Consigliato</span>
+                    <div class="prezzo-icon">🎓</div>
+                    <div class="prezzo-tipo">Tessera Giornaliera</div>
+                    <div class="prezzo-valore">€6</div>
+                    <p class="prezzo-desc">Accesso completo a tutto!</p>
+                    <div class="prezzo-divider"></div>
+                    <ul class="prezzo-features">
+                        <li>
+                            <span class="check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M20 6L9 17l-5-5"/>
+                                </svg>
+                            </span>
+                            Tutte le 6 lezioni pratiche
+                        </li>
+                        <li>
+                            <span class="check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M20 6L9 17l-5-5"/>
+                                </svg>
+                            </span>
+                            Tutti i talk inclusi
+                        </li>
+                        <li>
+                            <span class="check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M20 6L9 17l-5-5"/>
+                                </svg>
+                            </span>
+                            Prova ogni disciplina
+                        </li>
+                        <li>
+                            <span class="check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M20 6L9 17l-5-5"/>
+                                </svg>
+                            </span>
+                            Valida tutta la giornata
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Iscrizione Section -->
+    <section class="iscrizione" id="iscrizione">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">📝 Iscrizione</span>
+                <h2>Prenota il Tuo Posto</h2>
+                <p>I posti sono limitati, assicurati di partecipare!</p>
+            </div>
+            <div class="iscrizione-box">
+                <h3>Chiamaci o Scrivici</h3>
+                <p>Contattaci per riservare la tua partecipazione all'Open Day. Ti aspettiamo!</p>
+                <a href="tel:+39XXXXXXXXXX" class="telefono">
+                    <span class="phone-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                    </span>
+                    +39 XXX XXX XXXX
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mappa Section -->
+    <section class="mappa" id="dove">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">📍 Location</span>
+                <h2>Dove Trovarci</h2>
+                <p>Raggiungerci è facile, siamo ben collegati!</p>
+            </div>
+            <div class="mappa-content">
+                <div class="mappa-info">
+                    <h3>🐾 Over the Top</h3>
+                    <div class="location-card">
+                        <div class="address">
+                            <div class="address-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                            </div>
+                            <div class="address-text">
+                                <strong>Via per Ornago 2</strong>
+                                <span>Mezzate (MI)</span>
+                            </div>
+                        </div>
+                        <div class="location-features">
+                            <span class="location-feature">🅿️ Parcheggio gratuito</span>
+                            <span class="location-feature">🌳 Area verde</span>
+                            <span class="location-feature">☕ Ristoro</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mappa-embed">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2798.7!2d9.3831!3d45.4631!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDI3JzQ3LjIiTiA5wrAyMic1OS4yIkU!5e0!3m2!1sit!2sit!4v1234567890"
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="logo">Over the Top</div>
+        <p>Centro Cinofilo Sportivo<br>Via per Ornago 2, Mezzate (MI)</p>
+        <p class="made-with">
+            Made with <span>❤️</span> per i nostri amici a 4 zampe
+        </p>
+    </footer>
+
+    <!-- Smooth Scroll -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.card, .talk-card, .prezzo-card').forEach(el => {
+            el.style.animationPlayState = 'paused';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
