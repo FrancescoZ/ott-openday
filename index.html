@@ -399,6 +399,66 @@
             line-height: 1.7;
         }
         
+        /* ==================== FAQ SECTION ==================== */
+        .faq {
+            background: var(--warm-white);
+        }
+        
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: white;
+            border-radius: 20px;
+            padding: 28px 32px;
+            margin-bottom: 16px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(139, 38, 53, 0.06);
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            box-shadow: var(--shadow-md);
+        }
+        
+        .faq-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .faq-question {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--forest);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        
+        .faq-question .q-icon {
+            background: var(--sage-light);
+            color: var(--forest-dark);
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+        
+        .faq-answer {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.7;
+            padding-left: 40px;
+        }
+        
         /* ==================== SECTIONS COMMON ==================== */
         section {
             padding: 100px 24px;
@@ -1388,6 +1448,61 @@
                             Valida tutta la giornata
                         </li>
                     </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">❓ FAQ</span>
+                <h2>Domande Frequenti</h2>
+                <p>Probabilmente te le stai già facendo</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="q-icon">Q</span>
+                        "Il mio cane non è addestrato, posso venire lo stesso?"
+                    </div>
+                    <p class="faq-answer">Sì. Anzi, è perfetto. Qui non si giudica nessuno.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="q-icon">Q</span>
+                        "Il mio cane tira al guinzaglio / abbaia / non ascolta mai. È un problema?"
+                    </div>
+                    <p class="faq-answer">No. Tutti i cani sono benvenuti, anche quelli "difficili". Anzi, sono quelli che hanno più bisogno di trovare la loro attività.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="q-icon">Q</span>
+                        "Non ho mai fatto nulla del genere, mi sento fuori posto."
+                    </div>
+                    <p class="faq-answer">La maggior parte delle persone che vengono non ha mai fatto nulla del genere. È normale. Ti guidiamo noi.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="q-icon">Q</span>
+                        "Devo iscrivermi per forza alle lezioni?"
+                    </div>
+                    <p class="faq-answer">No. Puoi anche solo venire, guardare le dimostrazioni, ascoltare gli speech, mangiare qualcosa e fare una passeggiata. Zero pressione.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="q-icon">Q</span>
+                        "Posso venire senza cane?"
+                    </div>
+                    <p class="faq-answer">Sì, puoi venire anche solo per curiosità o per imparare qualcosa.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="q-icon">Q</span>
+                        "Il mio cane è anziano / piccolo / ha problemi di salute. Può partecipare?"
+                    </div>
+                    <p class="faq-answer">Sì, abbiamo attività adatte anche a cani anziani o con esigenze particolari (Special Dog). Parliamone quando ti iscrivi.</p>
                 </div>
             </div>
         </div>
