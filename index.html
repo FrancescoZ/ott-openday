@@ -184,8 +184,22 @@
             gap: 8px;
             font-size: 1.1rem;
             color: var(--sage-light);
-            margin-bottom: 40px;
+            margin-bottom: 24px;
             animation: fadeInUp 0.8s ease 0.5s both;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+            animation: fadeInUp 0.8s ease 0.55s both;
+        }
+        
+        .hero-subtitle strong {
+            color: white;
+            font-size: 1.2rem;
         }
         
         .cta-button {
@@ -238,6 +252,151 @@
             height: 32px;
             color: var(--sage-light);
             opacity: 0.6;
+        }
+        
+        /* ==================== RICONOSCI SECTION ==================== */
+        .riconosci {
+            background: var(--warm-white);
+            position: relative;
+        }
+        
+        .riconosci-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+        
+        .riconosci-problems {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(139, 38, 53, 0.08);
+        }
+        
+        .riconosci-problems h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--forest);
+            margin-bottom: 28px;
+        }
+        
+        .problem-list {
+            list-style: none;
+        }
+        
+        .problem-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 14px 0;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .problem-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .problem-list li .check-icon {
+            color: var(--forest);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .riconosci-solution {
+            padding: 20px 0;
+        }
+        
+        .riconosci-solution .highlight-box {
+            background: linear-gradient(135deg, var(--forest) 0%, var(--forest-dark) 100%);
+            color: white;
+            border-radius: 20px;
+            padding: 32px;
+            margin-bottom: 32px;
+        }
+        
+        .riconosci-solution .highlight-box p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin: 0;
+        }
+        
+        .riconosci-solution .highlight-box p strong {
+            color: var(--sage-light);
+        }
+        
+        .perche-diversa h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--forest);
+            margin-bottom: 20px;
+        }
+        
+        .perche-diversa p {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+        
+        .perche-diversa .emphasis {
+            font-style: italic;
+            color: var(--forest);
+        }
+        
+        @media (max-width: 900px) {
+            .riconosci-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+        
+        /* ==================== ESPERIENZA SECTION ==================== */
+        .esperienza {
+            background: var(--sand);
+        }
+        
+        .esperienza-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+        }
+        
+        .esperienza-card {
+            background: white;
+            border-radius: 24px;
+            padding: 36px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(139, 38, 53, 0.06);
+        }
+        
+        .esperienza-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .esperienza-card .card-emoji {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .esperienza-card h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--forest);
+            margin-bottom: 14px;
+        }
+        
+        .esperienza-card p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.7;
         }
         
         /* ==================== SECTIONS COMMON ==================== */
@@ -968,6 +1127,10 @@
                 </svg>
                 Via per Ornago 2, Mezzate
             </p>
+            <p class="hero-subtitle">
+                <strong>Un open day tra talk e dimostrazioni pratiche</strong><br>
+                Una giornata da vivere con il tuo cane, per osservare, ascoltare, fare domande e scoprire il mondo cinofilo in modo semplice, aperto e autentico.
+            </p>
             <a href="#iscrizione" class="cta-button">
                 Iscriviti Ora
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -979,6 +1142,74 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M12 5v14M19 12l-7 7-7-7"/>
             </svg>
+        </div>
+    </section>
+
+    <!-- Riconosci Section -->
+    <section class="riconosci" id="riconosci">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">🤔 Parliamoci chiaro</span>
+                <h2>Ti Riconosci in Uno di Questi?</h2>
+            </div>
+            <div class="riconosci-content">
+                <div class="riconosci-problems">
+                    <h3>Situazioni comuni</h3>
+                    <ul class="problem-list">
+                        <li><span class="check-icon">✓</span> Il tuo cane distrugge cose quando è solo</li>
+                        <li><span class="check-icon">✓</span> È sempre agitato, non si rilassa mai</li>
+                        <li><span class="check-icon">✓</span> Non ti ascolta durante le passeggiate</li>
+                        <li><span class="check-icon">✓</span> Sembra annoiato, anche dopo la passeggiata</li>
+                        <li><span class="check-icon">✓</span> Vorresti fare qualcosa di più insieme, ma non sai cosa</li>
+                    </ul>
+                </div>
+                <div class="riconosci-solution">
+                    <div class="highlight-box">
+                        <p><strong>Non è colpa tua. E non è colpa sua.</strong><br><br>
+                        Il problema è che ogni cane ha bisogno di qualcosa che lo stimola. Alcuni vogliono correre, altri annusare, altri ragionare.<br><br>
+                        E quando non lo trovano, si annoiano. E la noia diventa distruzione, agitazione, problemi.<br><br>
+                        <strong>La buona notizia?</strong> Esiste un'attività che fa per lui. E il 25 aprile puoi venire a scoprire quale.</p>
+                    </div>
+                    <div class="perche-diversa">
+                        <h3>✨ Perché Questa Giornata è Diversa</h3>
+                        <p>Non è una fiera. Non è una lezione "mordi e fuggi". Non è una vetrina.<br><br>
+                        <span class="emphasis">Sei Zampe Experience</span> nasce per creare uno spazio in cui fermarsi, osservare e capire. Un luogo dove puoi vedere dal vivo cosa significa lavorare con il cane in modo consapevole, rispettoso e concreto.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Esperienza Section -->
+    <section class="esperienza" id="esperienza">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">🎪 L'Esperienza</span>
+                <h2>Cosa Troverai</h2>
+                <p>Una giornata completa pensata per te e il tuo cane</p>
+            </div>
+            <div class="esperienza-grid">
+                <div class="esperienza-card">
+                    <span class="card-emoji">👀</span>
+                    <h3>Dimostrazioni Pratiche</h3>
+                    <p>Se non te la senti di provare subito, puoi guardare dal vivo come funzionano le varie attività. Vedrai cani (normali, non campioni) e i loro proprietari in azione. Così capisci meglio se può fare per voi.</p>
+                </div>
+                <div class="esperienza-card">
+                    <span class="card-emoji">🤝</span>
+                    <h3>Spazio di Confronto</h3>
+                    <p>Un'intera giornata per parlare con i professionisti del centro, fare domande, confrontarti e orientarti con più consapevolezza. Durante l'evento saranno disponibili promo e agevolazioni dedicate ai partecipanti.</p>
+                </div>
+                <div class="esperienza-card">
+                    <span class="card-emoji">🍔</span>
+                    <h3>Food Truck & Area Relax</h3>
+                    <p>Un food truck sempre presente durante la giornata per mangiare, bere qualcosa e prendersi una pausa. Perché anche stare insieme, con calma, fa parte dell'esperienza.</p>
+                </div>
+                <div class="esperienza-card">
+                    <span class="card-emoji">🛍</span>
+                    <h3>Espositori</h3>
+                    <p>Spazi dedicati a realtà del territorio e brand legati al mondo cinofilo, da scoprire con curiosità.</p>
+                </div>
+            </div>
         </div>
     </section>
 
