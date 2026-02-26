@@ -412,11 +412,11 @@
         .faq-item {
             background: white;
             border-radius: 20px;
-            padding: 28px 32px;
             margin-bottom: 16px;
             box-shadow: var(--shadow-sm);
             border: 1px solid rgba(139, 38, 53, 0.06);
             transition: all 0.3s ease;
+            overflow: hidden;
         }
         
         .faq-item:hover {
@@ -432,10 +432,17 @@
             font-size: 1.1rem;
             font-weight: 700;
             color: var(--forest);
-            margin-bottom: 12px;
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             gap: 12px;
+            padding: 24px 32px;
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.2s ease;
+        }
+        
+        .faq-question:hover {
+            background: rgba(139, 38, 53, 0.03);
         }
         
         .faq-question .q-icon {
@@ -452,11 +459,34 @@
             flex-shrink: 0;
         }
         
+        .faq-question .q-text {
+            flex: 1;
+        }
+        
+        .faq-question .q-toggle {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s ease;
+            color: var(--sage);
+        }
+        
+        .faq-item.open .faq-question .q-toggle {
+            transform: rotate(180deg);
+        }
+        
         .faq-answer {
             color: var(--text-muted);
             font-size: 1rem;
             line-height: 1.7;
-            padding-left: 40px;
+            padding: 0 32px 24px 72px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-item.open .faq-answer {
+            max-height: 200px;
+            padding-bottom: 24px;
         }
         
         /* ==================== SECTIONS COMMON ==================== */
@@ -500,6 +530,17 @@
             color: var(--text-muted);
             max-width: 600px;
             margin: 0 auto;
+        }
+        
+        .section-note {
+            font-size: 0.95rem !important;
+            color: var(--forest) !important;
+            font-weight: 500;
+            margin-top: 12px !important;
+            padding: 10px 20px;
+            background: var(--sage-light);
+            border-radius: 30px;
+            display: inline-block;
         }
         
         /* ==================== LEZIONI SECTION ==================== */
@@ -1240,46 +1281,14 @@
         </div>
     </section>
 
-    <!-- Esperienza Section -->
-    <section class="esperienza" id="esperienza">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">🎪 L'Esperienza</span>
-                <h2>Cosa Troverai</h2>
-                <p>Una giornata completa pensata per te e il tuo cane</p>
-            </div>
-            <div class="esperienza-grid">
-                <div class="esperienza-card">
-                    <span class="card-emoji">👀</span>
-                    <h3>Dimostrazioni Pratiche</h3>
-                    <p>Se non te la senti di provare subito, puoi guardare dal vivo come funzionano le varie attività. Vedrai cani (normali, non campioni) e i loro proprietari in azione. Così capisci meglio se può fare per voi.</p>
-                </div>
-                <div class="esperienza-card">
-                    <span class="card-emoji">🤝</span>
-                    <h3>Spazio di Confronto</h3>
-                    <p>Un'intera giornata per parlare con i professionisti del centro, fare domande, confrontarti e orientarti con più consapevolezza. Durante l'evento saranno disponibili promo e agevolazioni dedicate ai partecipanti.</p>
-                </div>
-                <div class="esperienza-card">
-                    <span class="card-emoji">🍔</span>
-                    <h3>Food Truck & Area Relax</h3>
-                    <p>Un food truck sempre presente durante la giornata per mangiare, bere qualcosa e prendersi una pausa. Perché anche stare insieme, con calma, fa parte dell'esperienza.</p>
-                </div>
-                <div class="esperienza-card">
-                    <span class="card-emoji">🛍</span>
-                    <h3>Espositori</h3>
-                    <p>Spazi dedicati a realtà del territorio e brand legati al mondo cinofilo, da scoprire con curiosità.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Lezioni Section -->
     <section class="lezioni" id="lezioni">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">🎓 Lezioni</span>
-                <h2>Prova le Nostre Discipline</h2>
-                <p>Sessioni gratuite di ~20 minuti con istruttori qualificati. Scopri quale attività fa per te e il tuo cane!</p>
+                <h2>Prova le Nostre Discipline*</h2>
+                <p>Sessioni di ~20 minuti con istruttori qualificati. Scopri quale attività fa per te e il tuo cane!</p>
+                <p class="section-note">* Per partecipare alle lezioni pratiche è richiesta un'assicurazione giornaliera del costo di €6</p>
             </div>
             <div class="cards-grid">
                 <div class="card">
@@ -1365,89 +1374,34 @@
         </div>
     </section>
 
-    <!-- Prezzi Section -->
-    <section class="prezzi" id="prezzi">
+    <!-- Esperienza Section -->
+    <section class="esperienza" id="esperienza">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">💳 Prezzi</span>
-                <h2>Quanto Costa?</h2>
-                <p>Partecipare è semplice e accessibile a tutti</p>
+                <span class="section-tag">🎪 L'Esperienza</span>
+                <h2>Cosa Troverai</h2>
+                <p>Una giornata completa pensata per te e il tuo cane</p>
             </div>
-            <div class="prezzi-grid">
-                <div class="prezzo-card">
-                    <div class="prezzo-icon">🎤</div>
-                    <div class="prezzo-tipo">Solo Talk</div>
-                    <div class="prezzo-valore">Gratis</div>
-                    <p class="prezzo-desc">Accesso libero ai seminari</p>
-                    <div class="prezzo-divider"></div>
-                    <ul class="prezzo-features">
-                        <li>
-                            <span class="check">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                                    <path d="M20 6L9 17l-5-5"/>
-                                </svg>
-                            </span>
-                            Tutti i talk con esperti
-                        </li>
-                        <li>
-                            <span class="check">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                                    <path d="M20 6L9 17l-5-5"/>
-                                </svg>
-                            </span>
-                            Materiale informativo
-                        </li>
-                        <li>
-                            <span class="check">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                                    <path d="M20 6L9 17l-5-5"/>
-                                </svg>
-                            </span>
-                            Q&A con i relatori
-                        </li>
-                    </ul>
+            <div class="esperienza-grid">
+                <div class="esperienza-card">
+                    <span class="card-emoji">👀</span>
+                    <h3>Dimostrazioni Pratiche</h3>
+                    <p>Se non te la senti di provare subito, puoi guardare dal vivo come funzionano le varie attività. Vedrai cani (normali, non campioni) e i loro proprietari in azione. Così capisci meglio se può fare per voi.</p>
                 </div>
-                <div class="prezzo-card featured">
-                    <span class="popular-badge">⭐ Consigliato</span>
-                    <div class="prezzo-icon">🎓</div>
-                    <div class="prezzo-tipo">Tessera Giornaliera</div>
-                    <div class="prezzo-valore">€6</div>
-                    <p class="prezzo-desc">Accesso completo a tutto!</p>
-                    <div class="prezzo-divider"></div>
-                    <ul class="prezzo-features">
-                        <li>
-                            <span class="check">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                                    <path d="M20 6L9 17l-5-5"/>
-                                </svg>
-                            </span>
-                            Tutte le 6 lezioni pratiche
-                        </li>
-                        <li>
-                            <span class="check">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                                    <path d="M20 6L9 17l-5-5"/>
-                                </svg>
-                            </span>
-                            Tutti i talk inclusi
-                        </li>
-                        <li>
-                            <span class="check">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                                    <path d="M20 6L9 17l-5-5"/>
-                                </svg>
-                            </span>
-                            Prova ogni disciplina
-                        </li>
-                        <li>
-                            <span class="check">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                                    <path d="M20 6L9 17l-5-5"/>
-                                </svg>
-                            </span>
-                            Valida tutta la giornata
-                        </li>
-                    </ul>
+                <div class="esperienza-card">
+                    <span class="card-emoji">🤝</span>
+                    <h3>Spazio di Confronto</h3>
+                    <p>Un'intera giornata per parlare con i professionisti del centro, fare domande, confrontarti e orientarti con più consapevolezza. Durante l'evento saranno disponibili promo e agevolazioni dedicate ai partecipanti.</p>
+                </div>
+                <div class="esperienza-card">
+                    <span class="card-emoji">🍔</span>
+                    <h3>Food Truck & Area Relax</h3>
+                    <p>Un food truck sempre presente durante la giornata per mangiare, bere qualcosa e prendersi una pausa. Perché anche stare insieme, con calma, fa parte dell'esperienza.</p>
+                </div>
+                <div class="esperienza-card">
+                    <span class="card-emoji">🛍</span>
+                    <h3>Espositori</h3>
+                    <p>Spazi dedicati a realtà del territorio e brand legati al mondo cinofilo, da scoprire con curiosità.</p>
                 </div>
             </div>
         </div>
@@ -1463,44 +1417,50 @@
             </div>
             <div class="faq-list">
                 <div class="faq-item">
-                    <div class="faq-question">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
                         <span class="q-icon">Q</span>
-                        "Il mio cane non è addestrato, posso venire lo stesso?"
+                        <span class="q-text">"Il mio cane non è addestrato, posso venire lo stesso?"</span>
+                        <svg class="q-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
                     </div>
                     <p class="faq-answer">Sì. Anzi, è perfetto. Qui non si giudica nessuno.</p>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
                         <span class="q-icon">Q</span>
-                        "Il mio cane tira al guinzaglio / abbaia / non ascolta mai. È un problema?"
+                        <span class="q-text">"Il mio cane tira al guinzaglio / abbaia / non ascolta mai. È un problema?"</span>
+                        <svg class="q-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
                     </div>
                     <p class="faq-answer">No. Tutti i cani sono benvenuti, anche quelli "difficili". Anzi, sono quelli che hanno più bisogno di trovare la loro attività.</p>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
                         <span class="q-icon">Q</span>
-                        "Non ho mai fatto nulla del genere, mi sento fuori posto."
+                        <span class="q-text">"Non ho mai fatto nulla del genere, mi sento fuori posto."</span>
+                        <svg class="q-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
                     </div>
                     <p class="faq-answer">La maggior parte delle persone che vengono non ha mai fatto nulla del genere. È normale. Ti guidiamo noi.</p>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
                         <span class="q-icon">Q</span>
-                        "Devo iscrivermi per forza alle lezioni?"
+                        <span class="q-text">"Devo iscrivermi per forza alle lezioni?"</span>
+                        <svg class="q-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
                     </div>
                     <p class="faq-answer">No. Puoi anche solo venire, guardare le dimostrazioni, ascoltare gli speech, mangiare qualcosa e fare una passeggiata. Zero pressione.</p>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
                         <span class="q-icon">Q</span>
-                        "Posso venire senza cane?"
+                        <span class="q-text">"Posso venire senza cane?"</span>
+                        <svg class="q-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
                     </div>
                     <p class="faq-answer">Sì, puoi venire anche solo per curiosità o per imparare qualcosa.</p>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
                         <span class="q-icon">Q</span>
-                        "Il mio cane è anziano / piccolo / ha problemi di salute. Può partecipare?"
+                        <span class="q-text">"Il mio cane è anziano / piccolo / ha problemi di salute. Può partecipare?"</span>
+                        <svg class="q-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
                     </div>
                     <p class="faq-answer">Sì, abbiamo attività adatte anche a cani anziani o con esigenze particolari (Special Dog). Parliamone quando ti iscrivi.</p>
                 </div>
