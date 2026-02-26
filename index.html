@@ -261,10 +261,11 @@
         }
         
         .riconosci-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: start;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 800px;
+            margin: 0 auto;
         }
         
         .riconosci-problems {
@@ -273,6 +274,14 @@
             padding: 40px;
             box-shadow: var(--shadow-md);
             border: 1px solid rgba(139, 38, 53, 0.08);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .riconosci-problems.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         
         .riconosci-problems h3 {
@@ -309,6 +318,19 @@
         
         .riconosci-solution {
             padding: 20px 0;
+        }
+        
+        .riconosci-solution .highlight-box,
+        .riconosci-solution .perche-diversa {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .riconosci-solution .highlight-box.visible,
+        .riconosci-solution .perche-diversa.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         
         .riconosci-solution .highlight-box {
@@ -478,15 +500,17 @@
             color: var(--text-muted);
             font-size: 1rem;
             line-height: 1.7;
-            padding: 0 32px 24px 72px;
+            padding: 0 32px 0 72px;
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
+            opacity: 0;
+            transition: max-height 0.3s ease, padding 0.3s ease, opacity 0.3s ease;
         }
         
         .faq-item.open .faq-answer {
-            max-height: 200px;
+            max-height: 300px;
             padding-bottom: 24px;
+            opacity: 1;
         }
         
         /* ==================== SECTIONS COMMON ==================== */
@@ -1576,6 +1600,26 @@
             el.style.animationPlayState = 'paused';
             observer.observe(el);
         });
+        
+        // Staggered animation for riconosci section
+        const riconosceObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const items = document.querySelectorAll('.riconosci-problems, .highlight-box, .perche-diversa');
+                    items.forEach((item, index) => {
+                        setTimeout(() => {
+                            item.classList.add('visible');
+                        }, index * 300);
+                    });
+                    riconosceObserver.disconnect();
+                }
+            });
+        }, { threshold: 0.2 });
+        
+        const riconosceSection = document.querySelector('.riconosci');
+        if (riconosceSection) {
+            riconosceObserver.observe(riconosceSection);
+        }
     </script>
 </body>
 </html>
