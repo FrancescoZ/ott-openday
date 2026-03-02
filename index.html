@@ -65,7 +65,7 @@
             position: relative;
             background: 
                 linear-gradient(135deg, rgba(139, 38, 53, 0.88) 0%, rgba(92, 26, 36, 0.92) 50%, rgba(70, 20, 28, 0.95) 100%),
-                url('https://images.unsplash.com/photo-1558788353-f76d92427f16?w=1600&q=80') center/cover no-repeat;
+                url('https://images.unsplash.com/photo-1503256207526-0d5d80fa2f47?w=1600&q=80') center/cover no-repeat;
             overflow: hidden;
         }
         
@@ -116,17 +116,25 @@
             position: relative;
             z-index: 1;
             text-align: center;
-            padding: 40px 24px;
+            padding: 10px 24px 40px;
             max-width: 900px;
         }
-        
+
+        .hero-logo {
+            display: block;
+            margin: 0 auto 12px;
+            width: 250px;
+            height: auto;
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.25));
+        }
+
         .hero-badge {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(255, 255, 255, 0.12);
+            background: transparent;
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1.5px solid rgba(255, 255, 255, 0.5);
             color: var(--sage-light);
             padding: 10px 24px;
             border-radius: 50px;
@@ -557,14 +565,13 @@
         }
         
         .section-note {
-            font-size: 0.95rem !important;
-            color: var(--forest) !important;
-            font-weight: 500;
-            margin-top: 12px !important;
-            padding: 10px 20px;
-            background: var(--sage-light);
-            border-radius: 30px;
-            display: inline-block;
+            font-size: 0.85rem !important;
+            color: #999 !important;
+            font-weight: 400;
+            margin-top: 16px !important;
+            padding: 0;
+            background: none;
+            display: block;
         }
         
         /* ==================== LEZIONI SECTION ==================== */
@@ -674,6 +681,59 @@
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 600;
+        }
+
+        .card-info-btn {
+            position: absolute;
+            top: 130px;
+            right: 16px;
+            width: 32px;
+            height: 32px;
+            background: white;
+            border: 2px solid var(--sage);
+            color: var(--forest);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 700;
+            cursor: pointer;
+            z-index: 3;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .card-info-btn:hover {
+            background: var(--sage);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .card.info-open .card-info-btn {
+            background: var(--forest);
+            border-color: var(--forest);
+            color: white;
+        }
+
+        .card-description {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.3s ease;
+            opacity: 0;
+            background: transparent;
+            border-radius: 12px;
+            margin-top: 0;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--text);
+        }
+
+        .card.info-open .card-description {
+            max-height: 500px;
+            opacity: 1;
+            padding: 16px;
+            margin-top: 16px;
         }
         
         /* ==================== TALK SECTION ==================== */
@@ -1109,6 +1169,14 @@
             border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
         
+        .footer-logo {
+            display: block;
+            margin: 0 auto 20px;
+            width: 140px;
+            height: auto;
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+        }
+
         footer .logo {
             font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
@@ -1234,6 +1302,7 @@
     <section class="hero">
         <div class="paw-prints"></div>
         <div class="hero-content">
+            <img src="logo.png" alt="Over the Top Agility Team" class="hero-logo">
             <span class="hero-badge">
                 🐕 Evento Cinofilo Gratuito
             </span>
@@ -1250,7 +1319,7 @@
                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                     <circle cx="12" cy="10" r="3"></circle>
                 </svg>
-                Via per Ornago 2, Mezzate
+                Via per Ornago, Vimercate (MB)
             </p>
             <p class="hero-subtitle">
                 <strong>Un open day tra talk e dimostrazioni pratiche</strong><br>
@@ -1302,6 +1371,14 @@
                     </div>
                 </div>
             </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="https://forms.gle/H91ez9t7WkY7fXra7" target="_blank" rel="noopener" class="cta-button">
+                    Iscriviti Ora
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -1312,51 +1389,71 @@
                 <span class="section-tag">🎓 Lezioni</span>
                 <h2>Prova le Nostre Discipline*</h2>
                 <p>Sessioni di ~20 minuti con istruttori qualificati. Scopri quale attività fa per te e il tuo cane!</p>
-                <p class="section-note">* Per partecipare alle lezioni pratiche è richiesta un'assicurazione giornaliera del costo di €6</p>
             </div>
             <div class="cards-grid">
-                <div class="card">
-                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=600&q=80');"></div>
+                <div class="card" onclick="toggleAllCards()">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1588943211346-0908a1fb0b01?w=600&q=80');"></div>
+                    <span class="card-info-btn">?</span>
                     <div class="card-icon">🏃</div>
                     <h3>Agility</h3>
                     <p>Percorsi ad ostacoli per cani veloci e atletici. Divertimento e sport in un'unica attività!</p>
                     <span class="card-duration">⏱️ ~20 min</span>
+                    <div class="card-description">L'Agility Dog è uno sport in cui un cane, guidato dal suo conduttore, affronta un percorso ad ostacoli nel modo più preciso e veloce possibile. Gli ostacoli includono salti, tunnel, passerelle e slalom. Il conduttore usa solo gesti e voce per guidare il cane, senza guinzaglio né premi. È un'attività divertente che migliora il legame tra cane e umano.</div>
                 </div>
-                <div class="card">
+                <div class="card" onclick="toggleAllCards()">
                     <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600&q=80');"></div>
+                    <span class="card-info-btn">?</span>
                     <div class="card-icon">🎯</div>
                     <h3>Rally Obedience</h3>
                     <p>Percorso con esercizi di obbedienza e complicità. Rafforza il legame con il tuo cane.</p>
                     <span class="card-duration">⏱️ ~20 min</span>
+                    <div class="card-description">La Rally Obedience è un'attività sportiva dove il cane e il conduttore seguono un percorso con cartelli che indicano esercizi da eseguire insieme, come sedersi, girare o camminare lentamente. È una disciplina basata sull'obbedienza, ma più dinamica e divertente rispetto alla classica. Il cane resta sempre al fianco del conduttore, che può incoraggiarlo con voce e gesti. Aiuta a migliorare la comunicazione e il legame tra cane e umano.</div>
                 </div>
-                <div class="card">
-                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1503256207526-0d5d80fa2f47?w=600&q=80');"></div>
+                <div class="card" onclick="toggleAllCards()">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1545468800-85cc9bc6ecf7?w=600&q=80');"></div>
+                    <span class="card-info-btn">?</span>
                     <div class="card-icon">🐑</div>
                     <h3>Sheep Dog</h3>
                     <p>L'arte della conduzione del gregge. Un'esperienza unica per i cani da pastore.</p>
                     <span class="card-duration">⏱️ ~20 min</span>
+                    <div class="card-description">Lo Sheep Dog è un'attività in cui il cane impara a condurre e gestire un piccolo gregge di pecore, seguendo le indicazioni del conduttore attraverso comandi vocali e fischietti. È una disciplina che risveglia l'istinto naturale dei cani da pastore, ma può essere praticata da molte razze. Il cane deve muoversi con calma e determinazione, mantenendo il controllo del gregge senza spaventarlo. È un'esperienza unica che rafforza la collaborazione e la fiducia tra cane e umano.</div>
                 </div>
-                <div class="card">
-                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1534361960057-19889db9621e?w=600&q=80');"></div>
+                <div class="card" onclick="toggleAllCards()">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1558929996-da64ba858215?w=600&q=80');"></div>
+                    <span class="card-info-btn">?</span>
                     <div class="card-icon">👃</div>
                     <h3>Nose Work</h3>
                     <p>Ricerca olfattiva per stimolare la mente. Il naso del cane è incredibile!</p>
                     <span class="card-duration">⏱️ ~20 min</span>
+                    <div class="card-description">Il Nosework è un'attività in cui il cane usa il suo fiuto per cercare e segnalare odori specifici nascosti in vari ambienti. È ispirato al lavoro dei cani da ricerca, ma pensato per il gioco e l'allenamento. Il conduttore osserva e supporta il cane senza indicargli dove cercare. È adatto a tutti i cani e li aiuta a usare il loro olfatto in modo stimolante e divertente.</div>
                 </div>
-                <div class="card">
-                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1477884213360-7e9d7dcc1e48?w=600&q=80');"></div>
+                <div class="card" onclick="toggleAllCards()">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?w=600&q=80');"></div>
+                    <span class="card-info-btn">?</span>
                     <div class="card-icon">🔍</div>
                     <h3>Mantrailing</h3>
                     <p>Ricerca di persone seguendo tracce olfattive. Attiva l'istinto naturale del tuo cane.</p>
                     <span class="card-duration">⏱️ ~20 min</span>
+                    <div class="card-description">Il Mantrailing è un'attività in cui il cane cerca una persona seguendo la sua traccia odorosa, partendo da un oggetto con il suo odore. Il cane lavora con il naso a terra o in aria, guidato dal conduttore con un guinzaglio lungo. È simile al lavoro dei cani da soccorso, ma si fa per sport o divertimento. Tutti i cani possono praticarlo, perché seguire gli odori è naturale per loro.</div>
                 </div>
-                <div class="card">
-                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1587559045816-8b0a54d1d5a1?w=600&q=80');"></div>
+                <div class="card" onclick="toggleAllCards()">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=600&q=80');"></div>
+                    <span class="card-info-btn">?</span>
                     <div class="card-icon">📚</div>
                     <h3>Educazione</h3>
                     <p>Basi per una convivenza serena e felice. Fondamentale per ogni proprietario.</p>
                     <span class="card-duration">⏱️ ~20 min</span>
+                    <div class="card-description">Il percorso di educazione base è un insieme di lezioni per insegnare al cane e al suo proprietario le regole fondamentali della convivenza. Si lavora su comandi semplici come "seduto", "resta" o "vieni", ma anche su come gestire guinzaglio, attenzione e calma. Aiuta a costruire un buon rapporto e una comunicazione chiara tra cane e umano. È utile per prevenire comportamenti sbagliati e vivere serenamente insieme.</div>
                 </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="https://forms.gle/H91ez9t7WkY7fXra7" target="_blank" rel="noopener" class="cta-button">
+                    Iscriviti Ora
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <p class="section-note">* Per partecipare alle lezioni pratiche è richiesta un'assicurazione giornaliera del costo di €6</p>
             </div>
         </div>
     </section>
@@ -1395,6 +1492,14 @@
                     <span class="talk-badge">✨ Gratuito</span>
                 </div>
             </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="https://forms.gle/H91ez9t7WkY7fXra7" target="_blank" rel="noopener" class="cta-button">
+                    Iscriviti Ora
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -1427,6 +1532,14 @@
                     <h3>Espositori</h3>
                     <p>Spazi dedicati a realtà del territorio e brand legati al mondo cinofilo, da scoprire con curiosità.</p>
                 </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="https://forms.gle/H91ez9t7WkY7fXra7" target="_blank" rel="noopener" class="cta-button">
+                    Iscriviti Ora
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
             </div>
         </div>
     </section>
@@ -1489,6 +1602,14 @@
                     <p class="faq-answer">Sì, abbiamo attività adatte anche a cani anziani o con esigenze particolari (Special Dog). Parliamone quando ti iscrivi.</p>
                 </div>
             </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="https://forms.gle/H91ez9t7WkY7fXra7" target="_blank" rel="noopener" class="cta-button">
+                    Iscriviti Ora
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -1501,15 +1622,13 @@
                 <p>I posti sono limitati, assicurati di partecipare!</p>
             </div>
             <div class="iscrizione-box">
-                <h3>Chiamaci o Scrivici</h3>
-                <p>Contattaci per riservare la tua partecipazione all'Open Day. Ti aspettiamo!</p>
-                <a href="tel:+39XXXXXXXXXX" class="telefono">
-                    <span class="phone-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                        </svg>
-                    </span>
-                    +39 XXX XXX XXXX
+                <h3>Iscriviti all'Open Day</h3>
+                <p>Compila il modulo per riservare la tua partecipazione all'Open Day. Ti aspettiamo!</p>
+                <a href="https://forms.gle/H91ez9t7WkY7fXra7" target="_blank" rel="noopener" class="cta-button" style="display: inline-flex; font-size: 1.2rem; padding: 18px 40px;">
+                    Compila il Modulo
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
+                    </svg>
                 </a>
             </div>
         </div>
@@ -1535,8 +1654,8 @@
                                 </svg>
                             </div>
                             <div class="address-text">
-                                <strong>Via per Ornago 2</strong>
-                                <span>Mezzate (MI)</span>
+                                <strong>Via per Ornago</strong>
+                                <span>Vimercate (MB)</span>
                             </div>
                         </div>
                         <div class="location-features">
@@ -1548,7 +1667,7 @@
                 </div>
                 <div class="mappa-embed">
                     <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2798.7!2d9.3831!3d45.4631!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDI3JzQ3LjIiTiA5wrAyMic1OS4yIkU!5e0!3m2!1sit!2sit!4v1234567890"
+                        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2795.5!2d9.390149613493652!3d45.60626907927738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDXCsDM2JzIyLjYiTiA5wrAyMycyNC41IkU!5e0!3m2!1sit!2sit!4v1234567890"
                         allowfullscreen="" 
                         loading="lazy" 
                         referrerpolicy="no-referrer-when-downgrade">
@@ -1560,8 +1679,9 @@
 
     <!-- Footer -->
     <footer>
+        <img src="logo.png" alt="Over the Top Agility Team" class="footer-logo">
         <div class="logo">Over the Top</div>
-        <p>Centro Cinofilo Sportivo<br>Via per Ornago 2, Mezzate (MI)</p>
+        <p>Centro Cinofilo Sportivo<br>Via per Ornago, Vimercate (MB)</p>
         <p class="made-with">
             Made with <span>❤️</span> per i nostri amici a 4 zampe
         </p>
@@ -1569,6 +1689,18 @@
 
     <!-- Smooth Scroll -->
     <script>
+        function toggleAllCards() {
+            const cards = document.querySelectorAll('.cards-grid .card');
+            const anyOpen = [...cards].some(c => c.classList.contains('info-open'));
+            cards.forEach(c => {
+                if (anyOpen) {
+                    c.classList.remove('info-open');
+                } else {
+                    c.classList.add('info-open');
+                }
+            });
+        }
+
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
