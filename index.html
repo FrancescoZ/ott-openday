@@ -515,8 +515,17 @@
             transition: max-height 0.3s ease, padding 0.3s ease, opacity 0.3s ease;
         }
         
+        .faq-answer ul {
+            margin: 8px 0;
+            padding-left: 20px;
+        }
+
+        .faq-answer ul li {
+            margin-bottom: 4px;
+        }
+
         .faq-item.open .faq-answer {
-            max-height: 300px;
+            max-height: 800px;
             padding-bottom: 24px;
             opacity: 1;
         }
@@ -1555,42 +1564,106 @@
                 <div class="faq-item">
                     <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
                         <span class="q-icon">Q</span>
+                        <span class="q-text">Chi può partecipare?</span>
+                        <svg class="q-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </div>
+                    <div class="faq-answer">L'open day è aperto a tutti: proprietari di cani, futuri adottanti e persone semplicemente curiose di avvicinarsi al mondo cinofilo.<br>Non serve essere esperti. Serve solo la curiosità di scoprire.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        <span class="q-icon">Q</span>
+                        <span class="q-text">Si può partecipare anche se non si ha un cane?</span>
+                        <svg class="q-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </div>
+                    <div class="faq-answer">Sì! L'evento è pensato anche per chi non ha ancora un cane ma vuole informarsi, fare domande o capire meglio questo mondo prima di adottare.<br>Puoi venire anche solo per curiosità o per accompagnare un amico.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        <span class="q-icon">Q</span>
+                        <span class="q-text">Quanto costa partecipare?</span>
+                        <svg class="q-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </div>
+                    <div class="faq-answer">L'evento è gratuito.<br>La partecipazione, gli speech e le dimostrazioni non hanno alcun costo.<br>Per le lezioni di prova: se non sei già tesserato CSEN, è richiesto un contributo assicurativo di 6€ che copre eventuali infortuni durante l'attività.<br>Buona notizia: se poi deciderai di iscriverti ai corsi, questi 6€ vengono scalati dalla quota di tesseramento annuale. Quindi non li paghi due volte!</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        <span class="q-icon">Q</span>
+                        <span class="q-text">Serve prenotarsi?</span>
+                        <svg class="q-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </div>
+                    <div class="faq-answer">Sì, la prenotazione è consigliata.<br>Ci aiuta a organizzare meglio la giornata, preparare i materiali e garantire a tutti un'esperienza di qualità.<br>I posti per le lezioni di prova sono limitati, quindi prima prenoti, meglio è!</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        <span class="q-icon">Q</span>
+                        <span class="q-text">Ho prenotato ma poi non posso venire. Che faccio?</span>
+                        <svg class="q-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </div>
+                    <div class="faq-answer">Nessun problema! Se puoi, avvisaci così liberiamo il posto per qualcun altro.<br>Ma non è vincolante: non ci sono penali o obblighi. La vita cambia, lo capiamo benissimo.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        <span class="q-icon">Q</span>
+                        <span class="q-text">Dove parcheggio?</span>
+                        <svg class="q-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </div>
+                    <div class="faq-answer">C'è parcheggio disponibile presso il centro cinofilo.<br>Troverai indicazioni chiare all'ingresso per orientarti facilmente.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        <span class="q-icon">Q</span>
+                        <span class="q-text">Cosa succede in caso di maltempo?</span>
+                        <svg class="q-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </div>
+                    <div class="faq-answer">In caso di pioggia intensa o condizioni meteorologiche avverse, l'evento verrà rinviato a data da definire.<br>Ti avviseremo tempestivamente tramite i nostri canali social e via email (se ti sei preiscritto).</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        <span class="q-icon">Q</span>
                         <span class="q-text">"Il mio cane non è addestrato, posso venire lo stesso?"</span>
                         <svg class="q-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
                     </div>
-                    <p class="faq-answer">Sì. Anzi, è perfetto. Qui non si giudica nessuno.</p>
+                    <div class="faq-answer">Sì. Anzi, è perfetto. Qui non si giudica nessuno.<br>Il tuo cane tira al guinzaglio? Abbaia agli altri cani? È vivace e non sta mai fermo? È timido o reattivo?<br>Va bene. È tutto normale.<br>La maggior parte dei cani che arrivano qui non ha mai fatto corsi. Gli istruttori sono preparati, sanno come gestire ogni situazione e ti aiuteranno passo passo.<br>Nessuno ti guarderà male. Nessuno penserà "che cane maleducato". Siamo tutti qui per imparare, crescere e divertirci insieme.<br>Se per caso pensi di sentirti fuori posto, non preoccuparti: la maggior parte delle persone che vengono non ha mai fatto nulla del genere.<br>È normale. Ti guidiamo noi!</div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
                         <span class="q-icon">Q</span>
-                        <span class="q-text">"Il mio cane tira al guinzaglio / abbaia / non ascolta mai. È un problema?"</span>
+                        <span class="q-text">Posso provare più discipline con il mio cane?</span>
                         <svg class="q-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
                     </div>
-                    <p class="faq-answer">No. Tutti i cani sono benvenuti, anche quelli "difficili". Anzi, sono quelli che hanno più bisogno di trovare la loro attività.</p>
+                    <div class="faq-answer">Assolutamente sì!<br>Ogni lezione di prova dura 20 minuti. Se vuoi far provare al tuo cane più attività (ad esempio agility + nosework + mantrailing), puoi prenotare più slot in orari diversi.<br>Dopo aver compilato il modulo, ti contatteremo per confermare gli orari e organizzare tutto senza sovrapposizioni.</div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
                         <span class="q-icon">Q</span>
-                        <span class="q-text">"Non ho mai fatto nulla del genere, mi sento fuori posto."</span>
+                        <span class="q-text">Cosa devo portare?</span>
                         <svg class="q-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
                     </div>
-                    <p class="faq-answer">La maggior parte delle persone che vengono non ha mai fatto nulla del genere. È normale. Ti guidiamo noi.</p>
+                    <div class="faq-answer">Consigliamo di portare:
+                        <ul>
+                            <li>Guinzaglio (non estensibile)</li>
+                            <li>Snack o premietti appetibili</li>
+                            <li>Gioco preferito del tuo cane</li>
+                            <li>Acqua per il cane</li>
+                            <li>Sacchetti igienici</li>
+                        </ul>
+                        Tutto il resto lo mettiamo noi!</div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
                         <span class="q-icon">Q</span>
-                        <span class="q-text">"Devo iscrivermi per forza alle lezioni?"</span>
+                        <span class="q-text">Devo per forza iscrivermi alle lezioni di prova?</span>
                         <svg class="q-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
                     </div>
-                    <p class="faq-answer">No. Puoi anche solo venire, guardare le dimostrazioni, ascoltare gli speech, mangiare qualcosa e fare una passeggiata. Zero pressione.</p>
+                    <div class="faq-answer">Assolutamente no.<br>Puoi decidere di venire anche solo per guardare le dimostrazioni, parlare con i nostri istruttori, ascoltare gli speech informativi, fare domande e orientarti meglio.<br>Zero pressione. Zero obblighi.<br>Vieni, osservi, ascolti. Se ti va di provare, bene. Se preferisci solo guardare, benissimo lo stesso.</div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
                         <span class="q-icon">Q</span>
-                        <span class="q-text">"Posso venire senza cane?"</span>
+                        <span class="q-text">È un evento adatto anche ai bambini?</span>
                         <svg class="q-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
                     </div>
-                    <p class="faq-answer">Sì, puoi venire anche solo per curiosità o per imparare qualcosa.</p>
+                    <div class="faq-answer">Sì, purché siano sempre accompagnati da un adulto e rispettino le indicazioni dello staff.<br>I bambini devono essere supervisionati e non devono arrecare fastidio agli altri partecipanti o ai cani.<br>Possono guardare le dimostrazioni, ascoltare gli speech e accarezzare i cani (sempre con il permesso del proprietario).</div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
@@ -1598,7 +1671,7 @@
                         <span class="q-text">"Il mio cane è anziano / piccolo / ha problemi di salute. Può partecipare?"</span>
                         <svg class="q-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
                     </div>
-                    <p class="faq-answer">Sì, abbiamo attività adatte anche a cani anziani o con esigenze particolari (Special Dog). Parliamone quando ti iscrivi.</p>
+                    <div class="faq-answer">Sì, abbiamo attività adatte anche a cani anziani o con esigenze particolari (Special Dog). Parliamone quando ti iscrivi.</div>
                 </div>
             </div>
             <div style="text-align: center; margin-top: 40px;">
