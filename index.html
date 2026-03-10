@@ -832,6 +832,63 @@
             font-weight: 600;
             margin-top: 16px;
         }
+
+        .talk-card {
+            cursor: pointer;
+        }
+
+        .talk-card-description {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.3s ease;
+            opacity: 0;
+            margin-top: 0;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--sage-light);
+        }
+
+        .talk-card.info-open .talk-card-description {
+            max-height: 500px;
+            opacity: 1;
+            margin-top: 12px;
+        }
+
+        .talk-card-info-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            color: var(--terracotta);
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 12px;
+            transition: opacity 0.3s ease;
+        }
+
+        .talk-card.info-open .talk-card-info-btn .btn-text-closed {
+            display: none;
+        }
+
+        .talk-card .talk-card-info-btn .btn-text-open {
+            display: none;
+        }
+
+        .talk-card.info-open .talk-card-info-btn .btn-text-open {
+            display: inline;
+        }
+
+        .talk-time-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
         
         /* ==================== PREZZI SECTION ==================== */
         .prezzi {
@@ -1302,6 +1359,7 @@
         .card:nth-child(2), .talk-card:nth-child(2), .prezzo-card:nth-child(2) { animation-delay: 0.2s; }
         .card:nth-child(3), .talk-card:nth-child(3) { animation-delay: 0.3s; }
         .card:nth-child(4), .talk-card:nth-child(4) { animation-delay: 0.4s; }
+        .talk-card:nth-child(5) { animation-delay: 0.5s; }
         .card:nth-child(5) { animation-delay: 0.5s; }
         .card:nth-child(6) { animation-delay: 0.6s; }
     </style>
@@ -1475,28 +1533,49 @@
                 <p>Seminari gratuiti tenuti da professionisti del settore. Impara dai migliori!</p>
             </div>
             <div class="talk-grid">
-                <div class="talk-card">
-                    <span class="talk-card-icon">🥗</span>
-                    <h3>Nutrizione canina</h3>
-                    <p>Alimentazione corretta per il benessere e la longevità del tuo amico a quattro zampe.</p>
+                <div class="talk-card" onclick="this.classList.toggle('info-open')">
+                    <span class="talk-time-badge">🕚 11:00 - 11:30</span>
+                    <span class="talk-card-icon">🍄</span>
+                    <h3>Pull Out: cerca tartufi con il tuo cane</h3>
+                    <p>Tutti i cani possono imparare a cercare tartufi. Fa bene al suo benessere (e se poi ne trova qualcuno in giro, fa bene anche al tuo portafoglio e alla tua tavola).</p>
+                    <span class="talk-card-info-btn"><span class="btn-text-closed">▼ Scopri di più</span><span class="btn-text-open">▲ Chiudi</span></span>
+                    <div class="talk-card-description">Tutti i cani possono imparare a cercare tartufi. Fa bene al suo benessere (e se poi ne trova qualcuno in giro, fa bene anche al tuo portafoglio e alla tua tavola).</div>
                     <span class="talk-badge">✨ Gratuito</span>
                 </div>
-                <div class="talk-card">
-                    <span class="talk-card-icon">🩺</span>
-                    <h3>Pronto soccorso</h3>
-                    <p>Come riconoscere un'emergenza e intervenire nei primi minuti critici.</p>
+                <div class="talk-card" onclick="this.classList.toggle('info-open')">
+                    <span class="talk-time-badge">🕚 11:45 - 12:15</span>
+                    <span class="talk-card-icon">🚑</span>
+                    <h3>Primo soccorso cinofilo</h3>
+                    <p>Cosa fare quando il tuo cane ha un malore, si ferisce o mangia qualcosa di pericoloso.</p>
+                    <span class="talk-card-info-btn"><span class="btn-text-closed">▼ Scopri di più</span><span class="btn-text-open">▲ Chiudi</span></span>
+                    <div class="talk-card-description">Le manovre essenziali che ogni proprietario dovrebbe conoscere per gestire un'emergenza prima di arrivare dal veterinario.</div>
                     <span class="talk-badge">✨ Gratuito</span>
                 </div>
-                <div class="talk-card">
-                    <span class="talk-card-icon">🐕‍🦺</span>
-                    <h3>Cani anziani</h3>
-                    <p>Cure, attenzioni e accorgimenti per i nostri amici senior. Invecchiare bene insieme.</p>
+                <div class="talk-card" onclick="this.classList.toggle('info-open')">
+                    <span class="talk-time-badge">🕐 13:00 - 13:30</span>
+                    <span class="talk-card-icon">🥣</span>
+                    <h3>Nutrizione: come leggere le etichette delle crocchette</h3>
+                    <p>Smetti di comprare cibo a caso. Impara a leggere gli ingredienti e scegliere il cibo giusto.</p>
+                    <span class="talk-card-info-btn"><span class="btn-text-closed">▼ Scopri di più</span><span class="btn-text-open">▲ Chiudi</span></span>
+                    <div class="talk-card-description">Impara a leggere gli ingredienti, riconoscere cosa c'è davvero dentro e scegliere il cibo giusto per il tuo cane in base alle sue esigenze.</div>
                     <span class="talk-badge">✨ Gratuito</span>
                 </div>
-                <div class="talk-card">
-                    <span class="talk-card-icon">👃</span>
-                    <h3>Mondo olfattivo</h3>
-                    <p>Approfondimento sulla ricerca olfattiva e come i cani percepiscono il mondo.</p>
+                <div class="talk-card" onclick="this.classList.toggle('info-open')">
+                    <span class="talk-time-badge">🕐 13:45 - 14:15</span>
+                    <span class="talk-card-icon">🎾</span>
+                    <h3>Gioco e motivazione</h3>
+                    <p>Scopri quale tipo di gioco è adatto al tuo cane e come usarlo per rafforzare il vostro legame.</p>
+                    <span class="talk-card-info-btn"><span class="btn-text-closed">▼ Scopri di più</span><span class="btn-text-open">▲ Chiudi</span></span>
+                    <div class="talk-card-description">Come giocare nel modo giusto per il tuo cane: scopri quale tipo di gioco è adatto a lui e come usarlo per rafforzare il vostro legame e migliorare la collaborazione.</div>
+                    <span class="talk-badge">✨ Gratuito</span>
+                </div>
+                <div class="talk-card" onclick="this.classList.toggle('info-open')">
+                    <span class="talk-time-badge">🕐 14:30 - 15:00</span>
+                    <span class="talk-card-icon">🧓</span>
+                    <h3>Gestione del cane anziano</h3>
+                    <p>Come comunicare con un cane che sta invecchiando e mantenervi connessi a ogni età.</p>
+                    <span class="talk-card-info-btn"><span class="btn-text-closed">▼ Scopri di più</span><span class="btn-text-open">▲ Chiudi</span></span>
+                    <div class="talk-card-description">Il linguaggio dei segni e il linguaggio del tocco per continuare a capirvi anche quando diventa sordo o cieco. Strategie pratiche per mantenervi connessi a ogni età.</div>
                     <span class="talk-badge">✨ Gratuito</span>
                 </div>
             </div>
